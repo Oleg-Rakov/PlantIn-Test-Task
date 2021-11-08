@@ -4,14 +4,11 @@ import styles from './SearchBlock.module.css';
 
 const SearchBlock = ({ searchValue, onChangeSearchQuery }) => {
   const [temperature, setTemperature] = useState(null);
-  const [isLoad, setIsLoad] = useState(false);
   const [isFetching, setIsFetching] = useState(false);
 
   const fetchData = async () => {
-    setIsLoad(false);
     setIsFetching(true);
     const response = await fetch(`${baseURL}`).then((res) => res.json());
-    setIsLoad(true);
     setIsFetching(false);
     const rounding = Math.floor(response.main.temp);
     setTemperature(rounding);
@@ -36,7 +33,7 @@ const SearchBlock = ({ searchValue, onChangeSearchQuery }) => {
           <h2>Stay always tuned with planting trends</h2>
           <span>
             Current temperature is:{' '}
-            {!isFetching && isLoad ? `${temperature} °C` : 'Loading...'}
+            {!isFetching ? `${temperature} °C` : 'Loading...'}
           </span>
           <div>
             <input
