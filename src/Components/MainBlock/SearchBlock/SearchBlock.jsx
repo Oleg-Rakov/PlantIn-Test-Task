@@ -8,7 +8,10 @@ const SearchBlock = ({ searchValue, onChangeSearchQuery }) => {
 
   const fetchData = async () => {
     setIsFetching(true);
-    const response = await fetch(`${baseURL}`).then((res) => res.json());
+    const response = await fetch(`${baseURL}`)
+      .then((res) => res.json())
+      .catch((err) => console.error(err));
+    if (!response) return;
     setIsFetching(false);
     const rounding = Math.floor(response.main.temp);
     setTemperature(rounding);

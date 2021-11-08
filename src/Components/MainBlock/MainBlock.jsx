@@ -42,7 +42,7 @@ const MainBlock = () => {
     setTimeout(() => {
       setNews((prevNews) => prevNews.concat(nextPage));
       setIsFetching(false);
-    }, 500);
+    }, 1500);
   }, [isFetching]);
 
   useEffect(() => {
@@ -64,9 +64,13 @@ const MainBlock = () => {
         searchValue={searchValue}
         onChangeSearchQuery={(e) => filterNews(e)}
       />
-      {!showSearchResults && <NewArticle />}
-      {!showSearchResults && <TopArticle />}
-      {!showSearchResults && <InterestingArticle />}
+      {!showSearchResults && (
+        <>
+          <NewArticle />
+          <TopArticle />
+          <InterestingArticle />
+        </>
+      )}
       <Promo />
       <ContinueFeed
         news={filteredNews}
@@ -88,8 +92,8 @@ function filterNewsBySearchValue(feedNews, searchQuery) {
 
 function getNewsForPage(currentPage) {
   return allNewsMock.slice(
-    currentPage * ITEMS_PER_PAGE, // 0;6;12
-    currentPage * ITEMS_PER_PAGE + ITEMS_PER_PAGE // 6;12;18
+    currentPage * ITEMS_PER_PAGE,
+    currentPage * ITEMS_PER_PAGE + ITEMS_PER_PAGE
   );
 }
 
