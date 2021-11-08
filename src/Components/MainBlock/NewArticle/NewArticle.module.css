@@ -1,0 +1,95 @@
+.container {
+  border-bottom: 1px solid #c4c4c4;
+  padding: 79px 0px 56px 0px;
+}
+
+.rectangle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 78px;
+  height: 36px;
+  background: no-repeat center url('../../../assets/img/rectangle.svg');
+  background-size: cover;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  color: white;
+}
+
+.articleBlock {
+  display: flex;
+  justify-content: space-between;
+}
+
+.articleBlock > a > img {
+  max-width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.articleBlock > a,
+.articleBlockInfo {
+  flex-basis: 48%;
+}
+
+.articleBlockDate::after {
+  content: '\00B7';
+  padding: 5px;
+}
+
+.articleBlockInfo > h2 {
+  color: #242424;
+  font-size: 45px;
+  padding-bottom: 15px;
+  padding-top: 10px;
+}
+
+.articleBlockInfo > p {
+  padding-top: 10px;
+  line-height: 24px;
+  color: #78787a;
+}
+
+@media screen and (max-width: 820px) {
+  .container {
+    width: 100%;
+  }
+  .articleBlock {
+    flex-direction: column;
+  }
+  .articleBlockInfo {
+    margin-left: 0;
+  }
+  .articleBlock > a > img {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .container {
+    width: 100%;
+    padding: 18px 0 23px 0;
+  }
+  .articleBlock {
+    display: unset;
+  }
+  .articleBlock > a > img {
+    width: 100%;
+  }
+  .articleBlockInfo {
+    padding: 16px 0 23px 0;
+    margin-left: 0;
+  }
+  .articleBlockInfo > h2 {
+    font-size: 24px;
+    padding: 8px 0;
+    line-height: 36px;
+  }
+  .articleBlockInfo > p {
+    padding: 0;
+  }
+}

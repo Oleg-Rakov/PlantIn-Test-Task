@@ -1,0 +1,25 @@
+.wrapper {
+    width: 1074px;
+    margin: 0 auto;
+    color: black;
+    padding-top: 0;
+}
+
+@media screen and (max-width: 1097px) {
+    .mainBlockWrapper {
+        padding-top: 0;
+    }
+    .wrapper {
+        width: 100%;
+        padding: 20px;
+        padding-top: 0;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .wrapper {
+        width: 100%;
+        padding: 0 16px;
+        padding-top: 60px;
+    }
+}

@@ -1,0 +1,146 @@
+.container {
+  position: sticky;
+  z-index: 1;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 24px 20px 24px;
+  background-color: white;
+  box-shadow: 0px 2px 40px rgba(0, 0, 0, 0.1),
+    0px 0.4px 6.5px rgba(0, 0, 0, 0.05);
+}
+
+.logo {
+  display: flex;
+}
+
+.logo > a {
+  display: inline-flex;
+}
+
+.navItems {
+  flex: auto;
+}
+
+.navItems > a {
+  color: #262626;
+  font-weight: 500;
+  text-decoration: none;
+  margin-left: 24px;
+}
+
+.navItems > a:hover {
+  color: #ff8383;
+  transition: 0.3s ease all;
+}
+
+.navItems > a:first-child {
+  margin-left: 44px;
+}
+
+.searchIcon {
+  display: flex;
+  margin-left: auto;
+  padding-right: 16px;
+}
+
+.searchIcon > a {
+  display: inline-flex;
+}
+
+.avatarLogo {
+  display: flex;
+}
+
+.avatarLogo > a {
+  display: inline-flex;
+}
+
+.menuToggle {
+  display: none;
+}
+
+@media screen and (max-width: 1097px) {
+  .container {
+    padding: 20px 5px 20px 20px;
+  }
+  .menuToggle {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .container {
+    padding: 20px 16px;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+  .navItems {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: white;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    transform: translateX(-200%);
+    transition: transform 1s ease;
+  }
+  .logo {
+    max-width: 100%;
+  }
+  .navItemsActive {
+    transform: translateX(0);
+  }
+  .navItems > a {
+    font-size: 35px;
+    margin-bottom: 15px;
+    margin-left: 0;
+  }
+  .navItems > a:first-child {
+    margin-left: 0;
+  }
+  .avatarLogo {
+    display: none;
+  }
+  .menuToggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 18px;
+    height: 12px;
+    z-index: 10;
+    cursor: pointer;
+  }
+  .menuToggle > span {
+    position: relative;
+    display: block;
+    width: 18px;
+    height: 2px;
+    border-radius: 5px;
+    background-color: #c5d1db;
+  }
+  .menuToggle > span::before,
+  .menuToggle > span::after {
+    position: absolute;
+    right: 0;
+    display: block;
+    content: '';
+    width: 12px;
+    height: 2px;
+    background-color: #c5d1db;
+  }
+  .menuToggle > span::before {
+    top: -5px;
+  }
+  .menuToggle > span::after {
+    top: 5px;
+  }
+}
